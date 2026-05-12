@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Ali | Video Editor & Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #f3eeff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .card-wrap {
+    background: #fff;
+    border-radius: 28px;
+    max-width: 420px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(123,94,167,0.15);
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #6c48b0 0%, #9b72d0 55%, #c4a8e8 100%);
+    padding: 2.8rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .avatar {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.15);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 span { font-weight: 400; opacity: 0.88; }
+  .hero-sub {
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin-top: 14px;
+    color: #fff;
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* SECTION */
+  .section { padding: 1.8rem 1.4rem; }
+  .section-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #9b8caa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
+  /* CARDS GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .pcard {
+    background: #fff;
+    border: 1px solid #ede8f5;
+    border-radius: 18px;
+    padding: 1.1rem 0.9rem 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .pcard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(123,94,167,0.12);
+  }
+  .pcard:active { transform: scale(0.97); }
+
+  .pcard-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pcard.red .pcard-icon  { background: #fff1f0; }
+  .pcard.blue .pcard-icon { background: #eef5ff; }
+  .pcard.purple .pcard-icon { background: #f7f0ff; }
+  .pcard.amber .pcard-icon  { background: #fff8ed; }
+
+  .pcard-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d1f42;
+    text-align: center;
+    line-height: 1.35;
+  }
+  .pcard-sub {
+    font-size: 11px;
+    color: #9b8caa;
+    text-align: center;
+  }
+  .pcard-count {
+    position: absolute;
+    top: 9px; right: 9px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .pcard.red .pcard-count   { background: #fff1f0; color: #c0392b; }
+  .pcard.blue .pcard-count  { background: #eef5ff; color: #1a5fa8; }
+  .pcard.purple .pcard-count { background: #f7f0ff; color: #7b3fa8; }
+  .pcard.amber .pcard-count  { background: #fff8ed; color: #b86a00; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: #f0eaf8; margin: 0 1.4rem; }
+
+  /* CONTACT */
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 1.3rem 1rem;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #f8f4ff;
+    border: 1px solid #e4d9f5;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #6c48b0;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+  .chip:hover { background: #ede4ff; }
+  .chip svg { flex-shrink: 0; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 0.9rem;
+    font-size: 11px;
+    color: #baaed0;
+    border-top: 1px solid #f0eaf8;
+  }
+
+  /* ANIMATION */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card-wrap { animation: fadeUp 0.5s ease both; }
+  .pcard:nth-child(1) { animation: fadeUp 0.4s 0.1s ease both; }
+  .pcard:nth-child(2) { animation: fadeUp 0.4s 0.2s ease both; }
+  .pcard:nth-child(3) { animation: fadeUp 0.4s 0.3s ease both; }
+  .pcard:nth-child(4) { animation: fadeUp 0.4s 0.4s ease both; }
+</style>
+</head>
+<body>
+
+<div class="card-wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="avatar">MA</div>
+    <h1><span>Muhammad</span> ALI</h1>
+    <p class="hero-sub">Video Editor &amp; Graphic Designer</p>
+    <div class="location-badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Karachi, Pakistan
+    </div>
+  </div>
+
+  <!-- PORTFOLIO SECTION -->
+  <div class="section">
+    <p class="section-label">My Portfolio</p>
+    <div class="grid">
+
+      <!-- Card 1: PL & WL -->
+      <a class="pcard red" href="https://www.youtube.com/playlist?list=PLiQBJsYDhRDZv1schd0ydayL_l-GlMJoh" target="_blank">
+        <span class="pcard-count">69 videos</span>
+        <div class="pcard-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#e00000">
+            <path d="M23.5 6.2s-.3-1.9-1.1-2.7c-1.1-1.1-2.3-1.1-2.8-1.2C16.8 2 12 2 12 2s-4.8 0-7.6.3c-.5.1-1.7.1-2.8 1.2C.7 4.3.4 6.2.4 6.2S.1 8.4.1 10.6v2.1c0 2.2.3 4.4.3 4.4s.3 1.9 1.1 2.7c1.1 1.1 2.5 1.1 3.1 1.1C6.5 21 12 21 12 21s4.8 0 7.6-.3c.5-.1 1.7-.1 2.8-1.2.8-.8 1.1-2.7 1.1-2.7s.3-2.2.3-4.4v-2.1c0-2.2-.3-4.4-.3-4.4zM9.7 15.5V8l7.6 3.8-7.6 3.7z"/>
+          </svg>
+        </div>
+        <span class="pcard-name">PL &amp; WL<br>Portfolio</span>
+        <span class="pcard-sub">Promo &amp; Brand Videos</span>
+      </a>
+
+      <!-- Card 2: Motion Graphics -->
+      <a class="pcard blue" href="https://www.youtube.com/playlist?list=PLiQBJsYDhRDb4RmA_oL2LYWP47DZ1rsaX" target="_blank">
+        <span class="pcard-count">22 videos</span>
+        <div class="pcard-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a6fbd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="pcard-name">Motion<br>Graphics</span>
+        <span class="pcard-sub">MG &amp; Animations</span>
+      </a>
+
+      <!-- Card 3: Reels -->
+      <a class="pcard purple" href="https://www.youtube.com/playlist?list=PLiQBJsYDhRDaZ_OLjsGlKW76beN4fE3dC" target="_blank">
+        <span class="pcard-count">13 videos</span>
+        <div class="pcard-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#7b3fa8">
+            <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="#7b3fa8" stroke-width="2"/>
+            <circle cx="12" cy="12" r="3" fill="#7b3fa8"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="#7b3fa8"/>
+          </svg>
+        </div>
+        <span class="pcard-name">Reels &amp;<br>Shorts</span>
+        <span class="pcard-sub">Social Media Content</span>
+      </a>
+
+      <!-- Card 4: Food Videos -->
+      <a class="pcard amber" href="https://youtube.com/playlist?list=PLiQBJsYDhRDZfRcWcvRKNrrFiRIXYLNib" target="_blank">
+        <span class="pcard-count">Playlist</span>
+        <div class="pcard-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b86a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/>
+            <line x1="10" y1="1" x2="10" y2="4"/>
+            <line x1="14" y1="1" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <span class="pcard-name">Food &amp;<br>Recipe Videos</span>
+        <span class="pcard-sub">Cinematic Food Content</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <div class="contact-row">
+    <a class="chip" href="tel:+923171253290">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6c48b0" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 .82h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +92 317 1253290
+    </a>
+    <a class="chip" href="mailto:aliy4e5@gmail.com">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6c48b0" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      aliy4e5@gmail.com
+    </a>
+  </div>
+
+  <footer>© 2025 Muhammad Ali &nbsp;·&nbsp; ALI_EDITZ</footer>
+
+</div>
+
+</body>
+</html>
